@@ -1,0 +1,143 @@
+package PBMessage; 
+
+message UserInfo{
+		required string account = 1;
+		required int32 level = 2;
+		required float highestScore = 4;
+		required int32 ranking = 5; 
+		required Status status = 6;
+		required int32 killNumber = 7;
+		required int32 deathNumber = 8;
+
+		enum Status
+		{
+		  ONLIEN =0;
+		  OFFLINE =1;
+		}
+}
+
+
+message MessageLogin{
+	    required string account = 1;
+		required string password = 2;
+	    required string status = 3;
+	    required string channel = 4;
+}
+
+message MessageLogout {
+		required string account = 1;
+}
+
+message WeaponInfo{
+
+		required string account = 1;
+		required WeaponType weaponType = 2;
+		required string target = 3;
+		enum WeaponType
+		{
+		  MachineGun = 0;
+		  PlasmaGun = 1;
+		  JetFlame = 2;
+		  LightShield = 3;
+		  FireWhirlwind = 4;
+		  Missile = 5;
+		  OrdinaryGun = 6;
+		  None = 7;
+		}
+}
+
+message Vector3{
+		required float x = 1;
+		required float y = 2;
+		required float z = 3;
+}
+message Vector4{
+		required float x = 1;
+		required float y = 2;
+		required float z = 3;
+		required float w = 4;
+}
+message Vector2{
+		required float x = 1;
+		required float y = 2;
+}
+message TransformData{
+		required string account = 1;
+		required float cf = 2;
+		required Vector3 pos = 3;
+		required Vector4 rot = 4;
+		required Vector3 velocity = 5;
+		required Vector3 angularVelocity = 6;
+}
+message DirectionSpeedData{
+		required string account = 1;
+		required float angle = 2;
+		required bool  mRockerIsMove = 3;
+		required Vector2 circularAngle = 4;
+}
+message WeaponGunRotate{
+		required string account = 3;
+		required bool isAttack = 2;
+		required float angle = 1;
+}
+
+message MessageGenerateExistedClients{
+		repeated string clients = 2;
+}
+
+message ObjectInfo{
+		required string account = 1;
+
+		required float MaxHp = 2;
+		required float Hp = 3;
+		required float AtkValue = 4;
+		required float DefValue = 5;
+		required float Level = 6;
+		required float Score = 7;
+		required int32 KillNumber = 8;
+		required int32 DeathNumber = 9;
+		required ObjectType objectType = 10;
+
+		enum ObjectType
+		{
+			Min = 0;
+			Bitch = 1;
+			Angel = 2;
+			Toilet = 3;
+			Villa = 4;
+			Max = 5;
+		}
+}
+
+message MessageOnDeath
+{
+		required string Attacker = 1;
+		required string Dead = 2;
+}
+message OrdinaryGunAttack
+{
+	required string account = 1;
+	required bool Attack = 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
